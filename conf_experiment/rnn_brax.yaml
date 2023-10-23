@@ -1,0 +1,31 @@
+launch:
+  # programs every GPU
+  runs_per_device: 1
+  # seeds per run
+  seed_per_exp: 3
+
+  # cold start period (per process)
+  cold_start_seconds: 3
+
+  filename: es_dense
+  method: main
+
+experiment_sets:
+  "GRU":
+    network_type: DenseGRU
+    network_conf:
+      hidden_dims: 256
+
+  "LSTM":
+    network_type: DenseLSTM
+    network_conf:
+      hidden_dims: 128
+
+
+tasks:
+  # Classic locomotion tasks
+  - task: hopper
+  - task: walker2d
+
+  # Humanoid tasks
+  - task: humanoid

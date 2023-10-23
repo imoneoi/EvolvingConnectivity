@@ -1,0 +1,27 @@
+launch:
+  # programs every GPU
+  runs_per_device: 1
+  # seeds per run
+  seed_per_exp: 3
+
+  # cold start period (per process)
+  cold_start_seconds: 3
+
+  filename: ec
+  method: main
+
+
+experiment_sets:
+  "SNN 256":
+    network_type: ConnSNN
+    network_conf:
+      num_neurons: 256
+
+
+tasks:
+  # Classic locomotion tasks
+  - task: hopper
+  - task: walker2d
+
+  # Humanoid tasks
+  - task: humanoid

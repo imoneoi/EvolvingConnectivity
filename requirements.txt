@@ -1,0 +1,7 @@
+flax
+optax
+brax<0.9
+wandb
+optuna
+tqdm
+omegaconf

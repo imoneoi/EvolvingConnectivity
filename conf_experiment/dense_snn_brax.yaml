@@ -1,0 +1,29 @@
+launch:
+  # programs every GPU
+  runs_per_device: 1
+  # seeds per run
+  seed_per_exp: 3
+
+  # cold start period (per process)
+  cold_start_seconds: 3
+
+  filename: es_dense
+  method: main
+
+experiment_sets:
+  "DenseSNN sigma0.3":
+    network_type: DenseSNN
+    network_conf:
+      num_neurons: 256
+
+    es_conf:
+      lr: 0.15
+      sigma: 0.3
+
+tasks:
+  # Classic locomotion tasks
+  - task: hopper
+  - task: walker2d
+
+  # Humanoid tasks
+  - task: humanoid
